@@ -8,7 +8,9 @@ export default class Form extends React.Component {
 
   handleChange = (e) =>{
     console.log(e.target.value);
-    
+    this.setState({
+      title: e.target.value,
+    })
   }
   render(){
     const {title} = this.state;
