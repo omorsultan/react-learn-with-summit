@@ -3,17 +3,40 @@ import React from 'react'
 export default class Form extends React.Component {
 
   state = {
-    title: 'javaScript'
+    title: 'javaScript',
+    text : 'javaScript is awesome',
+    library: 'Angular',
+    isAwesome: true
+    
   }
 
   handleChange = (e) =>{
-    console.log(e.target.value);
-    this.setState({
-      title: e.target.value,
-    })
+    if(e.target.type === 'text'){
+      this.setState({
+        title: e.target.value,
+      }
+      )
+    }
+
+    else if (e.target.type === 'textarea'){
+      this.setState({
+        text: e.target.value,
+      })
+    }
+    else if (e.target.type === 'select-one'){
+      this.setState({
+        library: e.target.value,
+      })
+    }
+
+    else if (e.target.type === 'checkbox'){
+      this.setState({
+        isAwesome: e.target.checked
+      })
+    }
   }
   render(){
-    const {title} = this.state;
+    const {title , text , library, isAwesome} = this.state;
     return(
       <div>
         <form>
@@ -22,7 +45,26 @@ export default class Form extends React.Component {
            value={title}
            onChange={this.handleChange}
            className='border-2 border-gray-300 rounded-sm  focus:border-blue-500 mt-6'/>
-        </form>
+            <br />
+           <br />
+          <textarea
+           name="text" value={text}  onChange={this.handleChange}
+           className='border-2 mt-4 pt-2 border-gray-200 focus:border-green-600'>
+           </textarea>
+           <br />
+           <br />
+
+           <select value={library} onChange={this.handleChange}>
+            <option value="React">React</option>
+            <option value="Angular">Angular</option>
+           </select>
+           
+           <input type="checkbox" checked={isAwesome}
+           onChange={this.handleChange} />
+
+           
+          </form>
+        
       </div>
     )
   }
