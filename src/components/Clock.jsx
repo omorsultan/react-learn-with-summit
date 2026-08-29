@@ -18,9 +18,9 @@ class Clock extends React.Component {
     clearInterval(this.clockTimer); // stops the timer
   }
 
-  handleClick = () => { // arrow function keeps the correct 'this' context
+  handleClick = (locale) => { // arrow function keeps the correct 'this' context
     this.setState({ // proper way to update state
-      locale: 'en-US',
+      locale: locale,
     });
   }
 
@@ -35,7 +35,7 @@ class Clock extends React.Component {
       <>
         {date.toLocaleTimeString(locale)}
 
-        <Button change={this.handleClick}>
+        <Button change={this.handleClick} locale="en-US">
           click here or fake
         </Button>
       </>
