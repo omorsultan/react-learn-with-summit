@@ -1,11 +1,13 @@
-import Clock from './components/Clock.jsx';
+import ClockList from './components/ClockList.jsx';
 
-function App(){
-  return (<>
-  <div><Clock /></div>
-     <div><Clock /></div>
-  </>
-    
-  )
+function App() {
+  const quantities = [1, 2, 3];
+
+  return (
+    <div>
+      <ClockList quantities={quantities} />
+    </div>
+  );
 }
+
 export default App;
