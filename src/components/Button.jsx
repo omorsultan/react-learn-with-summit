@@ -7,7 +7,7 @@ class Button extends React.Component{
     // console.log(locale);
     return (
         <button type="button" onClick={()=>{change(locale)}}>
-          Change the language is it real
+          Toggle to change language
         </button>
     )
   }

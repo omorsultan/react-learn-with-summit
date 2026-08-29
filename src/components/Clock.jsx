@@ -31,13 +31,25 @@ class Clock extends React.Component {
   render() {
     const { date, locale } = this.state;
 
+    let button;
+    if(locale === 'bn-BD'){
+      button = (<Button change={this.handleClick} locale="en-US">
+          click here or fake
+        </Button>)
+    }
+    else{
+      button = (
+        <Button change={this.handleClick} locale="bn-BD">
+          click here or fake
+        </Button>
+      )
+    }
+
     return (
       <>
         {date.toLocaleTimeString(locale)}
-
-        <Button change={this.handleClick} locale="en-US">
-          click here or fake
-        </Button>
+        {button}
+        
       </>
     )
   }
