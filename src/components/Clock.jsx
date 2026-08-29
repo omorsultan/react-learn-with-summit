@@ -1,5 +1,6 @@
 import React from 'react'
 import Button from './Button.jsx'
+import '../App.jsx'
 
 class Clock extends React.Component {
 
@@ -47,8 +48,13 @@ class Clock extends React.Component {
 
     return (
       <>
+      <div className='text-5xl font-extrabold'>
         {date.toLocaleTimeString(locale)}
+      </div>
+      <div className="rounded-lg bg-blue-500 px-5 py-2 text-white hover:bg-blue-600">
         {button}
+      </div>
+        
         
       </>
     )
