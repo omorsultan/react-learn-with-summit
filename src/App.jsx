@@ -1,10 +1,10 @@
-import Form from './components/Form.jsx';
+import Calculator from './components/Calculator.jsx';
 
 function App() {
   
   return (
     <div>
-      <Form />
+      <Calculator />
     </div>
   );
 }
