@@ -1,10 +1,9 @@
-import Calculator from './components/Calculator.jsx';
 
 function App() {
   
   return (
     <div>
-      <Calculator />
+     Hello
     </div>
   );
 }
