@@ -5,23 +5,9 @@ import React from 'react'
     f : 'Fahrenheit'
   };
 
-class InputTemperature extends React.Component{
-  
-  state = {
-    temperature: '',
-  }
 
-  onTemperatureChange = (e) =>{
-    this.setState({
-      temperature: e.target.value,
-    })
-  }
 
- 
-
-  render(){
-    const {temperature } = this.state;
-    const {scale} = this.props;
+const TemperatureInput = ({scale ,temperature,  onTemperatureChange}) => {
 
     return(
       <>
@@ -29,18 +15,16 @@ class InputTemperature extends React.Component{
          <fieldset >
        <legend>Enter temperature in {scaleName[scale]}</legend>
        <input type='text' value={temperature} 
-       onChange={this.onTemperatureChange}
+       onChange={(e) => onTemperatureChange(e, scale)}
        className='bg-green-400 border-blue-700 border-2' />
       </fieldset>
-      {/* <BoilingVerdict celsius={parseFloat(temperature)}/> */}
 
       </div>
      
       </>
     )
     
-  }
-
+  
 }
 
-export default InputTemperature
+export default TemperatureInput
